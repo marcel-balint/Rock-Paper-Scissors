@@ -1,26 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-<script>
-    //Random return function
-    function computerPlay() {
-        const random = Math.random();
-        if (random < .3) {
-            return "ROCK";
+    
+    <button  onclick="game()" id="btn" >Play</button>
+    
+    <script>
+        //Random return function
+        function computerPlay() {
+            const random = Math.random();
+            if (random < .3) {
+                return "ROCK";
+            }
+            else if (random > .3 && random < .6) {
+                return "PAPER";
+            }
+            else {
+                return "SCISSORS";
+            }
         }
-        else if (random > .3 && random < .6) {
-            return "PAPER";
+
+        function playRound(playerSelection, computerSelection) {
+            //TIE IN GAME
+            if (playerSelection.toUpperCase() === "ROCK" && computerSelection === "ROCK") {
+                alert("Tie");
+            }
+            else if (
+                playerSelection.toUpperCase() === "PAPER" && computerSelection === "PAPER") {
+                alert("Tie");
+            }
+            else if (
+                playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "SCISSORS") {
+                alert("Tie");
+
+                //WIN IN GAME
+            }
+            else if (playerSelection.toUpperCase() === "ROCK" && computerSelection === "SCISSORS") {
+                alert("You Win!!!");
+            }
+            else if (
+                playerSelection.toUpperCase() === "PAPER" && computerSelection === "ROCK") {
+                alert("You Win!!!");
+            }
+            else if (
+                playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "PAPER") {
+                alert("You Win!!!");
+
+                //LOST IN GAME
+            }
+            else if (playerSelection.toUpperCase() === "PAPER" && computerSelection === "SCISSORS") {
+                alert("You lost!")
+            }
+            else if (
+                playerSelection.toUpperCase() === "ROCK" && computerSelection === "PAPER") {
+                alert("You lost!")
+            }
+            else if (
+                playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "ROCK") {
+                alert("You lost!")
+            }
+            else {
+                alert("Please enter a game related word!")
+            }
         }
-        else {
-            return "SCISSORS";
+        
+        document.getElementById("btn").addEventListener("click", function () {
+         this.innerHTML = "REPLAY";
+       });
+
+        function game() {
+
+            const playerSelection = prompt("Choose between: Rock, Paper or Scissors");
+            const computerSelection = computerPlay()
+            console.log(playRound(playerSelection, computerSelection));
+
         }
-    }
     </script>
 </body>
+
 </html>
