@@ -6,12 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock Paper Scissors</title>
+    <style>
+    body {
+        background-color: #d3d3d3;
+    }
+        button {
+            border: 0;
+            padding: 15px;
+            cursor: pointer;
+            display: block;
+            margin: 100px auto;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            box-shadow: 1px 1px 50px -12px rgba(0, 0, 0, 0.73);
+        }
+
+        h1 {
+            text-align:center;
+        }
+    </style>
 </head>
 
 <body>
-    
-    <button  onclick="game()" id="btn" >Play</button>
-    
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="game()" id="btn">Play</button>
+
     <script>
         //Random return function
         function computerPlay() {
@@ -70,10 +93,10 @@
                 alert("Please enter a game related word!")
             }
         }
-        
-        document.getElementById("btn").addEventListener("click", function () {
-         this.innerHTML = "REPLAY";
-       });
+
+        document.getElementById("btn").addEventListener("click", function() {
+            this.innerHTML = "REPLAY";
+        });
 
         function game() {
 
