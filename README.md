@@ -1,4 +1,4 @@
 ## Rock Paper Scissors Game
 
-This game is created while learning JavaScript.
+This [game](https://marcel-balint.github.io/Rock-Paper-Scissors/) is created while learning JavaScript.
 
